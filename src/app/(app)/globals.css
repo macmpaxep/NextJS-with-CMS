@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+:root {
+  --navy: #6b0202;
+  --navy-2: #cba99c;
+  --panel: #5c0606;
+  --cyan: #d6cfcf;
+  --cyan-dim: #8B1A1A;
+  --amber: #111110;
+  --mist: #f4f7fa;
+  --slate: #0e0e0d;
+  --line: #d8cfcc;
+}
+
+@theme inline {
+  --color-navy: var(--navy);
+  --color-navy-2: var(--navy-2);
+  --color-panel: var(--panel);
+  --color-cyan: var(--cyan);
+  --color-cyan-dim: var(--cyan-dim);
+  --color-amber: var(--amber);
+  --color-mist: var(--mist);
+  --color-slate: var(--slate);
+  --color-line: var(--line);
+  --font-display: "Exo 2";
+  --font-body: "Inter";
+  --font-mono: "JetBrains Mono";
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--mist);
+  color: var(--navy);
+  font-family: var(--font-body), Arial, sans-serif;
+}
+
+h1, h2, h3, h4, .display {
+  font-family: var(--font-display), Arial, sans-serif;
+}
+
+.mono {
+  font-family: var(--font-mono), monospace;
+}
+
+/* Signature: LED pixel-matrix texture used on dark sections */
+.pixel-grid {
+  background-image: radial-gradient(circle, rgba(0, 194, 255, 0.35) 1px, transparent 1.4px);
+  background-size: 14px 14px;
+}
+
+.pixel-grid-fade {
+  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 30%, black 40%, transparent 90%);
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 30%, black 40%, transparent 90%);
+}
+
+.scanline {
+  position: relative;
+  overflow: hidden;
+}
+.scanline::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.035) 0px,
+    rgba(255, 255, 255, 0.035) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  pointer-events: none;
+}
+
+::selection {
+  background: var(--cyan);
+  color: var(--navy);
+}
+
+:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+}
