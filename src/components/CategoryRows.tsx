@@ -1,14 +1,26 @@
 import Link from "next/link";
+import { getPayload } from "payload";
+import config from "@payload-config";
 import { categories } from "@/data/categories";
-import { productsByCategory } from "@/data/products";
 import ProductCard from "@/components/ProductCard";
 
-export default function CategoryRows() {
+export default async function CategoryRows() {
+  const payload = await getPayload({ config });
+
   return (
     <section className="max-w-7xl mx-auto px-4 lg:px-8 py-4 space-y-16">
-      {categories.map((c) => {
-        const items = productsByCategory(c.slug).slice(0, 5);
+      {await Promise.all(categories.map(async (c) => {
+        const result = await payload.find({
+          collection: "products",
+          where: {
+            "category.slug": { equals: c.slug },
+          },
+          limit: 5,
+        });
+
+        const items = result.docs;
         if (items.length === 0) return null;
+
         return (
           <div key={c.slug}>
             <div className="flex items-end justify-between mb-6">
@@ -28,9 +40,9 @@ export default function CategoryRows() {
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
               {items.map((p, i) => (
-              <div key={p.slug} className={i === 4 ? "hidden sm:block" : ""}>
-              <ProductCard product={p} />
-              </div>
+                <div key={p.slug} className={i === 4 ? "hidden sm:block" : ""}>
+                  <ProductCard product={p as any} />
+                </div>
               ))}
             </div>
             <Link
@@ -41,7 +53,7 @@ export default function CategoryRows() {
             </Link>
           </div>
         );
-      })}
+      }))}
     </section>
   );
 }

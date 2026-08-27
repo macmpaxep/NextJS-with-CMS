@@ -2,9 +2,9 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import type { Product } from "@/data/products";
+import type { PayloadProduct } from "@/types/product";
 
-export default function ProductCard({ product }: { product: Product }) {
+export default function ProductCard({ product }: { product: PayloadProduct }) {
   const [imgError, setImgError] = useState(false);
 
   // Try webp first, then jpg, then show placeholder
