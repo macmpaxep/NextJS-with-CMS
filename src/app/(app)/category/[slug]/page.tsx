@@ -37,7 +37,7 @@ export default async function CategoryPage({
   const category = await getCategoryBySlug(slug);
   if (!category) notFound();
 
-  const items = await getProductsByCategory(category.id);
+const items = await getProductsByCategory(Number(category.id))
 
   return (
     <>

@@ -5,7 +5,6 @@ export const Media: CollectionConfig = {
   labels: { singular: 'Файл', plural: 'Медиафайлы' },
   upload: {
     staticDir: 'public/media',
-    staticURL: '/media',
     mimeTypes: ['image/*'],
   },
   fields: [
