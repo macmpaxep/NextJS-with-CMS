@@ -6,9 +6,6 @@ import { Products } from './src/collections/Products'
 import { Categories } from './src/collections/Categories'
 import { ru } from '@payloadcms/translations/languages/ru'
 
-console.log('DB URI:', process.env.DATABASE_URI)
-console.log('SECRET:', process.env.PAYLOAD_SECRET)
-
 export default buildConfig({
   editor: lexicalEditor(),
   collections: [Media, Products, Categories],
