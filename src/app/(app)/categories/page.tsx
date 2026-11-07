@@ -4,7 +4,7 @@ import PageHeader from "@/components/PageHeader";
 import ProductCard from "@/components/ProductCard";
 import { getAllCategories, getAllProducts } from "@/lib/payload";
 
-export const revalidate = 60;
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "Все категории LED-экранов — DOSLED",
