@@ -5,8 +5,6 @@ import CategoryRows from "@/components/CategoryRows";
 import OurWorks from "@/components/OurWorks";
 import Certificate from "@/components/Certificate";
 
-export const dynamic = "force-dynamic";
-
 export default function Home() {
   return (
     <>

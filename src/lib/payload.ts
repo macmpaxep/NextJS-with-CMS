@@ -1,3 +1,4 @@
+import { unstable_cache } from 'next/cache'
 import { getPayload } from 'payload'
 import config from '@payload-config'
 import type { PayloadProduct } from '@/types/product'
@@ -12,7 +13,7 @@ export async function getPayloadClient() {
 }
 
 // Категории
-export async function getAllCategories() {
+async function getAllCategoriesUncached() {
   const payload = await getPayloadClient()
   const result = await payload.find({
     collection: 'categories',
@@ -22,7 +23,7 @@ export async function getAllCategories() {
   return result.docs
 }
 
-export async function getCategoryBySlug(slug: string) {
+async function getCategoryBySlugUncached(slug: string) {
   const payload = await getPayloadClient()
   const result = await payload.find({
     collection: 'categories',
@@ -33,7 +34,7 @@ export async function getCategoryBySlug(slug: string) {
 }
 
 // Товары
-export async function getAllProducts(): Promise<PayloadProduct[]> {
+async function getAllProductsUncached(): Promise<PayloadProduct[]> {
   const payload = await getPayloadClient()
   const result = await payload.find({
     collection: 'products',
@@ -43,7 +44,7 @@ export async function getAllProducts(): Promise<PayloadProduct[]> {
   return result.docs as unknown as PayloadProduct[]
 }
 
-export async function getProductBySlug(slug: string): Promise<PayloadProduct | null> {
+async function getProductBySlugUncached(slug: string): Promise<PayloadProduct | null> {
   const payload = await getPayloadClient()
   const result = await payload.find({
     collection: 'products',
@@ -54,7 +55,7 @@ export async function getProductBySlug(slug: string): Promise<PayloadProduct | n
   return (result.docs[0] ?? null) as unknown as PayloadProduct | null
 }
 
-export async function getProductsByCategory(categoryId: number): Promise<PayloadProduct[]> {
+async function getProductsByCategoryUncached(categoryId: number): Promise<PayloadProduct[]> {
   const payload = await getPayloadClient()
   const result = await payload.find({
     collection: 'products',
@@ -65,7 +66,7 @@ export async function getProductsByCategory(categoryId: number): Promise<Payload
   return result.docs as unknown as PayloadProduct[]
 }
 
-export async function searchProducts(query: string): Promise<PayloadProduct[]> {
+async function searchProductsUncached(query: string): Promise<PayloadProduct[]> {
   const payload = await getPayloadClient()
   const result = await payload.find({
     collection: 'products',
@@ -81,3 +82,14 @@ export async function searchProducts(query: string): Promise<PayloadProduct[]> {
   })
   return result.docs as unknown as PayloadProduct[]
 }
+
+// Кэш на 60 сек: запросы к удалённой БД медленные, а данные меняются редко.
+const REVALIDATE = 60
+const TAGS = ['payload']
+
+export const getAllCategories = unstable_cache(getAllCategoriesUncached, ['all-categories'], { revalidate: REVALIDATE, tags: TAGS })
+export const getCategoryBySlug = unstable_cache(getCategoryBySlugUncached, ['category-by-slug'], { revalidate: REVALIDATE, tags: TAGS })
+export const getAllProducts = unstable_cache(getAllProductsUncached, ['all-products'], { revalidate: REVALIDATE, tags: TAGS })
+export const getProductBySlug = unstable_cache(getProductBySlugUncached, ['product-by-slug'], { revalidate: REVALIDATE, tags: TAGS })
+export const getProductsByCategory = unstable_cache(getProductsByCategoryUncached, ['products-by-category'], { revalidate: REVALIDATE, tags: TAGS })
+export const searchProducts = unstable_cache(searchProductsUncached, ['search-products'], { revalidate: REVALIDATE, tags: TAGS })
