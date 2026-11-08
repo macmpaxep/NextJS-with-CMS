@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getProductBySlug, getProductsByCategory } from "@/lib/payload";
 import { getImageUrl } from "@/lib/media";
+import ZoomImage from "@/components/ZoomImage";
 import ProductCard from "@/components/ProductCard";
 import ProductRequestButton from "@/components/ProductRequestButton";
 
@@ -99,12 +100,7 @@ export default async function ProductPage({
         {/* Фото */}
         <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-navy">
           {imgUrl ? (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img
-              src={imgUrl}
-              alt={product.name}
-              className="w-full h-full object-cover"
-            />
+            <ZoomImage src={imgUrl} alt={product.name} />
           ) : (
             <div className="pixel-grid w-full h-full">
               <div className="absolute inset-0 bg-gradient-to-br from-navy/10 via-transparent to-navy/70" />
