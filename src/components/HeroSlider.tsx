@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { useRequestModal } from "@/components/RequestModalProvider";
 
 type Slide = {
@@ -51,15 +51,44 @@ export default function HeroSlider() {
   const [hovered, setHovered] = useState(false);
   const { open } = useRequestModal();
 
+  const touch = useRef<{ x: number; y: number } | null>(null);
+
+  const go = useCallback(
+    (dir: 1 | -1) => setActive((v) => (v + dir + slides.length) % slides.length),
+    [],
+  );
+
+  // Автопрокрутка; таймер сбрасывается при ручном переключении (active в зависимостях)
   useEffect(() => {
-    const id = setInterval(() => setActive((v) => (v + 1) % slides.length), 6000);
-    return () => clearInterval(id);
-  }, []);
+    const id = setTimeout(() => go(1), 6000);
+    return () => clearTimeout(id);
+  }, [active, go]);
+
+  // Свайп влево/вправо на смартфонах; вертикальная прокрутка страницы не блокируется
+  const onTouchStart = (e: React.TouchEvent) => {
+    const t = e.touches[0];
+    touch.current = { x: t.clientX, y: t.clientY };
+  };
+  const onTouchEnd = (e: React.TouchEvent) => {
+    const start = touch.current;
+    touch.current = null;
+    if (!start) return;
+    const t = e.changedTouches[0];
+    const dx = t.clientX - start.x;
+    const dy = t.clientY - start.y;
+    if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.5) go(dx < 0 ? 1 : -1);
+  };
 
   return (
     <section
       className="relative w-full overflow-hidden"
-      style={{ background: C.bg }}
+      style={{ background: C.bg, touchAction: "pan-y" }}
+      onTouchStart={onTouchStart}
+      onTouchEnd={onTouchEnd}
+      onKeyDown={(e) => {
+        if (e.key === "ArrowLeft") go(-1);
+        if (e.key === "ArrowRight") go(1);
+      }}
     >
       {/* Фоновые фото — переключаются через opacity */}
       {slides.map((s, i) => (
@@ -169,19 +198,39 @@ export default function HeroSlider() {
       </div>
 
       {/* Точки-навигация */}
-      <div className="relative z-[3] flex justify-center gap-2 pb-8">
-        {slides.map((_, i) => (
-          <button
-            key={i}
-            aria-label={`Слайд ${i + 1}`}
-            onClick={() => setActive(i)}
-            className="h-1.5 rounded-full transition-all duration-300"
-            style={{
-              width: i === active ? "2rem" : "1rem",
-              background: i === active ? "#ffffff" : "rgba(255,255,255,0.3)",
-            }}
-          />
-        ))}
+      <div className="relative z-[3] flex items-center justify-center gap-4 pb-8">
+        <button
+          type="button"
+          aria-label="Предыдущий слайд"
+          onClick={() => go(-1)}
+          className="hidden md:flex h-9 w-9 items-center justify-center rounded-full text-xl leading-none transition-colors hover:bg-white/25"
+          style={{ background: "rgba(255,255,255,0.12)", color: "#ffffff" }}
+        >
+          ‹
+        </button>
+        <div className="flex gap-2">
+          {slides.map((_, i) => (
+            <button
+              key={i}
+              aria-label={`Слайд ${i + 1}`}
+              onClick={() => setActive(i)}
+              className="h-1.5 rounded-full transition-all duration-300"
+              style={{
+                width: i === active ? "2rem" : "1rem",
+                background: i === active ? "#ffffff" : "rgba(255,255,255,0.3)",
+              }}
+            />
+          ))}
+        </div>
+        <button
+          type="button"
+          aria-label="Следующий слайд"
+          onClick={() => go(1)}
+          className="hidden md:flex h-9 w-9 items-center justify-center rounded-full text-xl leading-none transition-colors hover:bg-white/25"
+          style={{ background: "rgba(255,255,255,0.12)", color: "#ffffff" }}
+        >
+          ›
+        </button>
       </div>
     </section>
   );
