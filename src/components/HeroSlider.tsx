@@ -103,7 +103,7 @@ export default function HeroSlider() {
             src={s.image}
             alt=""
             className="w-full h-full object-cover"
-            style={{ opacity: 0.45 }}
+            style={{ opacity: 0.85 }}
           />
         </div>
       ))}
@@ -114,9 +114,9 @@ export default function HeroSlider() {
         style={{
           background: `linear-gradient(
             to right,
-            ${C.bg}ee 0%,
-            ${C.bg}cc 30%,
-            ${C.bg}66 60%,
+            ${C.bg}cc 0%,
+            ${C.bg}99 30%,
+            ${C.bg}33 60%,
             transparent 100%
           )`,
         }}
@@ -161,11 +161,11 @@ export default function HeroSlider() {
             </p>
             <h1
               className="display text-3xl md:text-5xl font-bold leading-[1.1] mb-5"
-              style={{ color: "#ffffff" }}
+              style={{ color: "#ffffff", textShadow: "0 2px 16px rgba(0,0,0,0.6)" }}
             >
               {s.title}
             </h1>
-            <p className="text-base md:text-lg mb-8 max-w-xl" style={{ color: "rgba(255,255,255,0.72)" }}>
+            <p className="text-base md:text-lg mb-8 max-w-xl" style={{ color: "rgba(255,255,255,0.92)", textShadow: "0 1px 10px rgba(0,0,0,0.6)" }}>
               {s.text}
             </p>
             <button

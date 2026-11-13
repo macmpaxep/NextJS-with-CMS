@@ -113,7 +113,7 @@ export default function RequestModal({ isOpen, onClose, presetProduct }: Props) 
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="p-6 space-y-4">
-            <input type="hidden" name="_subject" value="Новая заявка с сайта AGE LED" />
+            <input type="hidden" name="_subject" value="Новая заявка с сайта dosled.com" />
             {presetProduct && (
               <input type="hidden" name="Товар" value={presetProduct} />
             )}

@@ -38,7 +38,7 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-3">
-      <input type="hidden" name="_subject" value="Заявка с сайта AGE LED (форма внизу)" />
+      <input type="hidden" name="_subject" value="Заявка с сайта dosled.com (форма внизу)" />
       <input
         name="Имя"
         required
