@@ -2,7 +2,15 @@
 
 import { useEffect, useState } from "react";
 
-export default function ZoomImage({ src, alt }: { src: string; alt: string }) {
+export default function ZoomImage({
+  src,
+  alt,
+  fit = "cover",
+}: {
+  src: string;
+  alt: string;
+  fit?: "cover" | "contain";
+}) {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -26,7 +34,7 @@ export default function ZoomImage({ src, alt }: { src: string; alt: string }) {
         src={src}
         alt={alt}
         onClick={() => setOpen(true)}
-        className="w-full h-full object-cover cursor-zoom-in"
+        className={`w-full h-full cursor-zoom-in ${fit === "contain" ? "object-contain" : "object-cover"}`}
       />
 
       {open && (

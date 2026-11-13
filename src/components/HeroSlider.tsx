@@ -3,7 +3,15 @@
 import { useEffect, useState } from "react";
 import { useRequestModal } from "@/components/RequestModalProvider";
 
-const slides = [
+type Slide = {
+  eyebrow: string;
+  title: string;
+  text: string;
+  image: string;
+  link?: { href: string; label: string };
+};
+
+const slides: Slide[] = [
   {
     eyebrow: "Наружные и фасадные решения",
     title: "LED-экраны, которые видно с любой точки города",
@@ -21,6 +29,13 @@ const slides = [
     title: "От прозрачных витрин до креативных инсталляций",
     text: "Кубы, кольца, гибкие панели и напольные покрытия — рассчитаем экран под вашу задачу.",
     image: "/works/work-06.jpg",
+  },
+  {
+    eyebrow: "Партнёр Leyard",
+    title: "DOSLED — официальный дистрибьютор Leyard",
+    text: "Поставляем светодиодные экраны Leyard — одного из мировых лидеров LED-отрасли — с гарантией, монтажом и сервисом в Казахстане.",
+    image: "/works/work-01.jpg",
+    link: { href: "https://www.leyard.com/", label: "Сайт Leyard" },
   },
 ];
 
@@ -138,6 +153,18 @@ export default function HeroSlider() {
               Оставить заявку
               <span aria-hidden>→</span>
             </button>
+            {s.link && (
+              <a
+                href={s.link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="ml-3 inline-flex items-center gap-2 font-semibold px-6 py-3.5 rounded-full border transition-colors duration-200 hover:bg-white/10"
+                style={{ color: "#ffffff", borderColor: "rgba(255,255,255,0.5)" }}
+              >
+                {s.link.label}
+                <span aria-hidden>↗</span>
+              </a>
+            )}
           </div>
         ))}
       </div>
