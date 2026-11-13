@@ -34,8 +34,7 @@ const slides: Slide[] = [
     eyebrow: "Партнёр Leyard",
     title: "DOSLED — официальный дистрибьютор Leyard",
     text: "Поставляем светодиодные экраны Leyard — одного из мировых лидеров LED-отрасли — с гарантией, монтажом и сервисом в Казахстане.",
-    image: "/works/work-01.jpg",
-    link: { href: "https://www.leyard.com/", label: "Сайт Leyard" },
+    image: "/works/leyard-office.jpg",
   },
 ];
 
