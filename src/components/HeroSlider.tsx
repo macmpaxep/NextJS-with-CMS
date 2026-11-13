@@ -148,11 +148,11 @@ export default function HeroSlider() {
       />
 
       {/* Контент */}
-      <div className="relative z-[3] max-w-7xl mx-auto px-4 lg:px-8 py-20 md:py-28 min-h-[420px] flex items-center">
+      <div className="relative z-[3] max-w-7xl mx-auto px-4 lg:px-8 py-16 md:py-24 grid items-start">
         {slides.map((s, i) => (
           <div
             key={i}
-            className="absolute inset-x-4 lg:inset-x-8 max-w-2xl transition-all duration-700"
+            className="col-start-1 row-start-1 max-w-2xl transition-all duration-700"
             style={{
               opacity: i === active ? 1 : 0,
               transform: i === active ? "translateY(0)" : "translateY(16px)",
