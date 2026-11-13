@@ -31,7 +31,7 @@ export default function ContactForm() {
   if (status === "sent") {
     return (
       <p className="text-white/80 text-sm">
-        Спасибо! Заявка отправлена на {site.email}, мы свяжемся с вами.
+        Спасибо! Заявка отправлена, мы свяжемся с вами.
       </p>
     );
   }

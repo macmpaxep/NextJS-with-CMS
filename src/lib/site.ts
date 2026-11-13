@@ -1,7 +1,7 @@
 export const site = {
   name: "DOSLED",
   companyFull: "DOSLED — LED-экраны",
-  address: "Нура район, Астана, Проспект Туран, 46/1, БЦ The Square",
+  address: "Нура район, Астана, Достык 4, БЦ Festival Avenue 1 этаж",
   phoneDisplay: "+7 777 522 6715",
   phoneHref: "tel:+77775226715",
   whatsapp: "https://wa.me/77775226715",
