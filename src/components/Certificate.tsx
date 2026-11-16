@@ -5,14 +5,14 @@ const certificates = [
     src: "/certificates/leyard-authorization.jpg",
     alt: "Сертификат авторизации Leyard для ТОО «Dosled»",
     title: "Авторизация Leyard",
-    text: "Сертификат авторизации Leyard: ТОО «Dosled» — авторизованный бизнес-партнёр Leyard по проекту ТЦ Mega Shymkent. Срок действия: 01.05.2026 – 01.12.2026.",
+    text: "Сертификат авторизации Leyard: ТОО «Dosled» — авторизованный бизнес-партнёр Leyard по проекту ТЦ Mega Shymkent.",
     landscape: true,
   },
   {
     src: "/certificates/dosled-certificate.jpg",
     alt: "Сертификат Leyard: ТОО «Dosled» — авторизованный бизнес-партнёр в Казахстане",
     title: "Сертификат авторизованного партнёра Leyard",
-    text: "ТОО «Dosled» — авторизованный бизнес-партнёр бренда Leyard по продаже, монтажу и обслуживанию LED-решений в Казахстане. Действителен с 01.10.2026 по 31.12.2026.",
+    text: "ТОО «Dosled» — авторизованный бизнес-партнёр бренда Leyard по продаже, монтажу и обслуживанию LED-решений в Казахстане.",
     landscape: false,
   },
   {
