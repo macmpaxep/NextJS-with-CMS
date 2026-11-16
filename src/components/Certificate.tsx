@@ -9,6 +9,13 @@ const certificates = [
     landscape: true,
   },
   {
+    src: "/certificates/dosled-certificate.jpg",
+    alt: "Сертификат Leyard: ТОО «Dosled» — авторизованный бизнес-партнёр в Казахстане",
+    title: "Сертификат авторизованного партнёра Leyard",
+    text: "ТОО «Dosled» — авторизованный бизнес-партнёр бренда Leyard по продаже, монтажу и обслуживанию LED-решений в Казахстане. Действителен с 01.10.2026 по 31.12.2026.",
+    landscape: false,
+  },
+  {
     src: "/certificates/eac-conformity.jpg",
     alt: "Сертификат соответствия ЕАЭС",
     title: "Сертификат соответствия ЕАЭС",
@@ -27,7 +34,7 @@ export default function Certificate() {
         <h2 className="display text-2xl md:text-3xl font-bold">Наши сертификаты</h2>
       </div>
 
-      <div className="grid gap-6 md:grid-cols-2">
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {certificates.map((c) => (
           <div
             key={c.src}
