@@ -47,8 +47,8 @@ const slides: Slide[] = [
 // Все цвета — явные hex, без var()
 const C = {
   bg:       "#4a0e0e",   // самый тёмный красный — фон секции
-  red:      "#c93228",   // кнопка
-  redHover: "#a82820",   // hover кнопки
+  red:      "#961815",   // кнопка
+  redHover: "#7a1210",   // hover кнопки
   amber:    "#f39c12",   // надтекст eyebrow
 };
 
