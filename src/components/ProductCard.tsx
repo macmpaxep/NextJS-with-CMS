@@ -34,7 +34,7 @@ export default function ProductCard({ product }: { product: PayloadProduct }) {
         </div>
       </Link>
       <div className="p-4 flex flex-col gap-2 flex-1">
-        <h3 className="display font-semibold text-[15px] leading-snug">
+        <h3 className="text-navy display font-semibold text-[15px] leading-snug">
           <Link href={`/product/${product.slug}`} className="hover:text-cyan-dim transition">
             {product.name}
           </Link>

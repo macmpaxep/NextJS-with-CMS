@@ -2,7 +2,7 @@ export default function PresentationDownload() {
   return (
     <section className="max-w-7xl mx-auto px-4 lg:px-8 pt-14">
       <div className="rounded-2xl border border-line/20 bg-white px-6 py-8 text-center">
-        <h2 className="display text-xl md:text-2xl font-bold">
+        <h2 className="text-navy display text-xl md:text-2xl font-bold">
           Скачайте презентацию и узнайте больше о нас
         </h2>
         <p className="mono text-[11px] text-slate/70 mt-2">PDF · 12,5 МБ</p>

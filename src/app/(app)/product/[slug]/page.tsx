@@ -120,7 +120,7 @@ export default async function ProductPage({
               {cat.label}
             </p>
           )}
-          <h1 className="display text-3xl font-bold mb-4">{product.name}</h1>
+          <h1 className="text-navy display text-3xl font-bold mb-4">{product.name}</h1>
           {product.description && (
             <p className="text-slate leading-relaxed mb-6">{product.description}</p>
           )}
@@ -151,7 +151,7 @@ export default async function ProductPage({
       {/* Похожие модели */}
       {related.length > 0 && (
         <div className="max-w-7xl mx-auto px-4 lg:px-8 pb-16">
-          <h2 className="display text-xl font-bold mb-5">Похожие модели</h2>
+          <h2 className="text-navy display text-xl font-bold mb-5">Похожие модели</h2>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
             {related.map((p) => (
               <ProductCard key={p.id} product={p} />

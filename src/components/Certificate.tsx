@@ -31,7 +31,7 @@ export default function Certificate() {
         <p className="mono text-[11px] tracking-[0.2em] uppercase text-cyan-dim mb-2">
           Подтверждение качества
         </p>
-        <h2 className="display text-2xl md:text-3xl font-bold">Наши сертификаты</h2>
+        <h2 className="text-navy display text-2xl md:text-3xl font-bold">Наши сертификаты</h2>
       </div>
 
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -48,7 +48,7 @@ export default function Certificate() {
               <ZoomImage src={c.src} alt={c.alt} fit="contain" />
             </div>
             <div>
-              <h3 className="display font-semibold text-lg mb-2">{c.title}</h3>
+              <h3 className="text-navy display font-semibold text-lg mb-2">{c.title}</h3>
               <p className="text-slate text-sm leading-relaxed">{c.text}</p>
             </div>
           </div>

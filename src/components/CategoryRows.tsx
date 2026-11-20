@@ -28,7 +28,7 @@ export default async function CategoryRows() {
                 <p className="mono text-[11px] tracking-[0.2em] uppercase text-cyan-dim mb-1">
                   Каталог
                 </p>
-                <h2 className="display text-2xl font-bold">{c.title}</h2>
+                <h2 className="text-navy display text-2xl font-bold">{c.title}</h2>
               </div>
               <Link
                 href={`/category/${c.slug}`}

@@ -57,7 +57,7 @@ export default async function CategoriesPage() {
             <section key={cat.slug} id={cat.slug} className="scroll-mt-40">
               <div className="flex items-end justify-between mb-6">
                 <div>
-                  <h2 className="display text-2xl font-bold">
+                  <h2 className="text-navy display text-2xl font-bold">
                     {cat.title || cat.label}
                   </h2>
                   {cat.intro && (
