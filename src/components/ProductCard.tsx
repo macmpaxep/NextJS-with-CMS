@@ -13,7 +13,7 @@ export default function ProductCard({ product }: { product: PayloadProduct }) {
   return (
     <div className="group flex flex-col rounded-xl border border-line/15 bg-white overflow-hidden hover:shadow-lg hover:-translate-y-0.5 transition">
       <Link href={`/product/${product.slug}`} className="block">
-        <div className="relative aspect-[4/3] bg-slate overflow-hidden">
+        <div className="relative aspect-[4/3] bg-gradient-to-b from-[#f4f5f7] to-[#e4e7eb] overflow-hidden">
           {!imgError ? (
             // eslint-disable-next-line @next/next/no-img-element
             <img

@@ -6,7 +6,7 @@ export default function ProductImage({ slug, name, pixelPitch }: { slug: string;
   const [imgError, setImgError] = useState(false);
 
   return (
-    <div className="relative aspect-[4/3] rounded-2xl bg-slate overflow-hidden scanline">
+    <div className="relative aspect-[4/3] rounded-2xl bg-gradient-to-b from-[#f4f5f7] to-[#e4e7eb] overflow-hidden scanline">
       {!imgError ? (
         // eslint-disable-next-line @next/next/no-img-element
         <img

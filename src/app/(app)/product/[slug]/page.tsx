@@ -98,7 +98,7 @@ export default async function ProductPage({
 
       <div className="max-w-7xl mx-auto px-4 lg:px-8 pb-16 grid lg:grid-cols-2 gap-10">
         {/* Фото */}
-        <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-slate">
+        <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-b from-[#f4f5f7] to-[#e4e7eb]">
           {imgUrl ? (
             <ZoomImage src={imgUrl} alt={product.name} />
           ) : (
