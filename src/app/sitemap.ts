@@ -25,7 +25,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     for (const p of products) {
       entries.push({
         url: `${BASE}/product/${p.slug}`,
-        lastModified: p.updatedAt ? new Date(p.updatedAt as string) : now,
+        lastModified: (p as { updatedAt?: string }).updatedAt
+          ? new Date((p as { updatedAt?: string }).updatedAt as string)
+          : now,
         changeFrequency: "monthly",
         priority: 0.6,
       });
