@@ -160,7 +160,7 @@ export default function OurWorks() {
                 />
                 {/* Zoom hint overlay */}
                 <div className="absolute inset-0 bg-navy/0 group-hover:bg-navy/20 transition-all duration-300 flex items-center justify-center">
-                  <span className="opacity-0 group-hover:opacity-100 transition-all duration-300 bg-white/90 text-navy rounded-full p-3 shadow-lg">
+                  <span className="opacity-0 group-hover:opacity-100 transition-all duration-300 bg-white/90 text-ink rounded-full p-3 shadow-lg">
                     <ZoomIcon />
                   </span>
                 </div>

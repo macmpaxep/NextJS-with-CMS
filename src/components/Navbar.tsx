@@ -46,7 +46,7 @@ export default function Navbar() {
 
             <button
               onClick={() => open()}
-              className="hidden md:inline-flex items-center rounded-full bg-cyan text-navy font-semibold text-sm px-5 py-2.5 hover:bg-cyan-dim hover:text-white transition shrink-0"
+              className="hidden md:inline-flex items-center rounded-full bg-cyan text-ink font-semibold text-sm px-5 py-2.5 hover:bg-cyan-dim hover:text-white transition shrink-0"
             >
               Оставить заявку
             </button>
@@ -102,7 +102,7 @@ export default function Navbar() {
                 setMobileOpen(false);
                 open();
               }}
-              className="mt-3 rounded-full bg-cyan text-navy font-semibold text-sm px-5 py-2.5"
+              className="mt-3 rounded-full bg-cyan text-ink font-semibold text-sm px-5 py-2.5"
             >
               Оставить заявку
             </button>
@@ -126,7 +126,7 @@ function NavLink({
     <Link
       href={href}
       className={`whitespace-nowrap text-sm px-3 py-1.5 rounded-md transition hover:bg-mist hover:text-cyan-dim ${
-        strong ? "font-semibold text-navy" : "text-slate"
+        strong ? "font-semibold text-ink" : "text-slate"
       }`}
     >
       {children}

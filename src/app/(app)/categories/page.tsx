@@ -68,7 +68,7 @@ export default async function CategoriesPage() {
                 </div>
                 <Link
                   href={`/category/${cat.slug}`}
-                  className="hidden sm:inline-flex text-sm font-semibold text-cyan-dim hover:text-navy transition items-center gap-1 shrink-0"
+                  className="hidden sm:inline-flex text-sm font-semibold text-cyan-dim hover:text-ink transition items-center gap-1 shrink-0"
                 >
                   Открыть раздел →
                 </Link>

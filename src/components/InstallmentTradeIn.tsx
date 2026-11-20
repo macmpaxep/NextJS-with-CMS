@@ -48,7 +48,7 @@ function ArrowCircle({ dark }: { dark?: boolean }) {
   return (
     <span
       className={`relative shrink-0 w-12 h-12 rounded-full flex items-center justify-center transition group-hover:translate-x-1 ${
-        dark ? "bg-cyan text-navy" : "bg-navy text-white"
+        dark ? "bg-cyan text-ink" : "bg-navy text-white"
       }`}
     >
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none">

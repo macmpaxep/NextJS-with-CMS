@@ -44,7 +44,7 @@ export default function ProductCard({ product }: { product: PayloadProduct }) {
           <span className="mono text-[11px] text-slate">{product.brightness.split("–")[0]}</span>
           <Link
             href={`/product/${product.slug}`}
-            className="text-xs font-semibold text-cyan-dim hover:text-navy transition inline-flex items-center gap-1"
+            className="text-xs font-semibold text-cyan-dim hover:text-ink transition inline-flex items-center gap-1"
           >
             Подробнее
             <span aria-hidden>→</span>

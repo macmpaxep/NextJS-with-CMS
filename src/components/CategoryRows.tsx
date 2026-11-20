@@ -32,7 +32,7 @@ export default async function CategoryRows() {
               </div>
               <Link
                 href={`/category/${c.slug}`}
-                className="hidden sm:inline-flex text-sm font-semibold text-cyan-dim hover:text-navy transition items-center gap-1"
+                className="hidden sm:inline-flex text-sm font-semibold text-cyan-dim hover:text-ink transition items-center gap-1"
               >
                 Смотреть все
                 <span aria-hidden>→</span>

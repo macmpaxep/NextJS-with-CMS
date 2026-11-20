@@ -49,7 +49,7 @@ const items = await getProductsByCategory(Number(category.id))
       <div className="max-w-7xl mx-auto px-4 lg:px-8 py-12">
         <p className="text-sm text-slate mb-6">
           Найдено моделей:{" "}
-          <span className="font-semibold text-navy">{items.length}</span>
+          <span className="font-semibold text-ink">{items.length}</span>
         </p>
         {items.length === 0 ? (
           <p className="text-slate">

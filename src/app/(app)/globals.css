@@ -1,7 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --navy: #6b0202;
+  --navy: #c93228;
+  --ink: #6b0202;
   --navy-2: #cba99c;
   --panel: #5c0606;
   --cyan: #d6cfcf;
@@ -14,6 +15,7 @@
 
 @theme inline {
   --color-navy: var(--navy);
+  --color-ink: var(--ink);
   --color-navy-2: var(--navy-2);
   --color-panel: var(--panel);
   --color-cyan: var(--cyan);
@@ -33,7 +35,7 @@ html {
 
 body {
   background: var(--mist);
-  color: var(--navy);
+  color: var(--ink);
   font-family: var(--font-body), Arial, sans-serif;
 }
 
@@ -76,7 +78,7 @@ h1, h2, h3, h4, .display {
 
 ::selection {
   background: var(--cyan);
-  color: var(--navy);
+  color: var(--ink);
 }
 
 :focus-visible {

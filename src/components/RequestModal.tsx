@@ -153,7 +153,7 @@ export default function RequestModal({ isOpen, onClose, presetProduct }: Props) 
             <button
               type="submit"
               disabled={status === "sending"}
-              className="w-full rounded-lg bg-cyan text-navy font-semibold py-3 text-sm hover:bg-cyan-dim hover:text-white transition disabled:opacity-60"
+              className="w-full rounded-lg bg-cyan text-ink font-semibold py-3 text-sm hover:bg-cyan-dim hover:text-white transition disabled:opacity-60"
             >
               {status === "sending" ? "Отправка…" : "Отправить заявку"}
             </button>

@@ -24,7 +24,7 @@ export default function Footer() {
                 href={site.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-[#25D366] text-navy font-semibold px-4 py-2.5 rounded-full text-sm hover:opacity-90 transition"
+                className="inline-flex items-center gap-2 bg-[#25D366] text-ink font-semibold px-4 py-2.5 rounded-full text-sm hover:opacity-90 transition"
               >
                 Написать в WhatsApp
               </a>

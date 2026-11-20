@@ -133,7 +133,7 @@ function EmotionsBlock() {
           <Link
             key={c.slug}
             href={`/category/${c.slug}`}
-            className="text-xs bg-white/10 hover:bg-cyan hover:text-navy transition px-3 py-1.5 rounded-full"
+            className="text-xs bg-white/10 hover:bg-cyan hover:text-ink transition px-3 py-1.5 rounded-full"
           >
             {c.label}
           </Link>

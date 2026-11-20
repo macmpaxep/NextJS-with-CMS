@@ -93,7 +93,7 @@ export default async function ProductPage({
             <span aria-hidden>/</span>
           </>
         )}
-        <span className="text-navy font-medium">{product.name}</span>
+        <span className="text-ink font-medium">{product.name}</span>
       </nav>
 
       <div className="max-w-7xl mx-auto px-4 lg:px-8 pb-16 grid lg:grid-cols-2 gap-10">

@@ -9,7 +9,7 @@ export default function ProductRequestButton({ productName }: { productName: str
     <div className="flex flex-wrap gap-3">
       <button
         onClick={() => open(productName)}
-        className="inline-flex items-center gap-2 bg-cyan text-navy font-semibold px-6 py-3.5 rounded-full hover:bg-navy hover:text-white transition"
+        className="inline-flex items-center gap-2 bg-cyan text-ink font-semibold px-6 py-3.5 rounded-full hover:bg-navy hover:text-white transition"
       >
         Оставить заявку на этот экран
       </button>
