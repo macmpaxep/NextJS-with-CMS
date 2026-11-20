@@ -140,7 +140,7 @@ export default async function ProductPage({
               <p className="text-xs font-semibold text-slate uppercase tracking-wide mb-2">
                 Применение
               </p>
-              <p className="text-sm">{product.application}</p>
+              <p className="text-sm text-navy">{product.application}</p>
             </div>
           )}
 
@@ -167,7 +167,7 @@ function Spec({ label, value }: { label: string; value: string }) {
   return (
     <div className="rounded-lg border border-line/15 bg-white px-4 py-3">
       <p className="text-[11px] text-slate uppercase tracking-wide mb-0.5">{label}</p>
-      <p className="text-sm font-semibold mono">{value}</p>
+      <p className="text-sm font-semibold mono text-navy">{value}</p>
     </div>
   );
 }
