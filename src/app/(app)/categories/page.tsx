@@ -44,7 +44,7 @@ export default async function CategoriesPage() {
         ))}
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 lg:px-8 pb-16 space-y-16">
+      <div className="max-w-7xl mx-auto px-4 lg:px-8 pb-16 lg:pt-12 space-y-16">
         {categories.map((cat) => {
           const items = products.filter((p) => {
             const c = p.category;
