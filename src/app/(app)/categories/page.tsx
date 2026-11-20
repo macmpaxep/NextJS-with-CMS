@@ -32,7 +32,7 @@ export default async function CategoriesPage() {
       />
 
       {/* Быстрая навигация по якорям */}
-      <div className="max-w-7xl mx-auto px-4 lg:px-8 py-8 flex flex-wrap gap-2">
+      <div className="lg:hidden max-w-7xl mx-auto px-4 lg:px-8 py-8 flex flex-wrap gap-2">
         {categories.map((c) => (
           <Link
             key={c.slug}
