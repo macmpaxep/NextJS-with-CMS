@@ -13,7 +13,7 @@ export default function ProductCard({ product }: { product: PayloadProduct }) {
   return (
     <div className="group flex flex-col rounded-xl border border-line/15 bg-white overflow-hidden hover:shadow-lg hover:-translate-y-0.5 transition">
       <Link href={`/product/${product.slug}`} className="block">
-        <div className="relative aspect-[4/3] bg-navy overflow-hidden">
+        <div className="relative aspect-[4/3] bg-slate overflow-hidden">
           {!imgError ? (
             // eslint-disable-next-line @next/next/no-img-element
             <img
@@ -25,10 +25,10 @@ export default function ProductCard({ product }: { product: PayloadProduct }) {
           ) : (
             /* fallback placeholder */
             <div className="pixel-grid w-full h-full flex items-end p-3">
-              <div className="absolute inset-0 bg-gradient-to-br from-navy/10 via-transparent to-navy/60" />
+              <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-black/60" />
             </div>
           )}
-          <div className="absolute bottom-3 left-3 mono text-[10px] text-cyan/90 bg-navy/70 rounded px-2 py-1">
+          <div className="absolute bottom-3 left-3 mono text-[10px] text-cyan/90 bg-black/60 rounded px-2 py-1">
             {product.pixelPitch}
           </div>
         </div>

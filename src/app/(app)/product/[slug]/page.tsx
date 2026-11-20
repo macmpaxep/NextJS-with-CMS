@@ -98,7 +98,7 @@ export default async function ProductPage({
 
       <div className="max-w-7xl mx-auto px-4 lg:px-8 pb-16 grid lg:grid-cols-2 gap-10">
         {/* Фото */}
-        <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-navy">
+        <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-slate">
           {imgUrl ? (
             <ZoomImage src={imgUrl} alt={product.name} />
           ) : (
@@ -107,7 +107,7 @@ export default async function ProductPage({
             </div>
           )}
           {product.pixelPitch && (
-            <div className="absolute bottom-4 left-4 mono text-xs text-cyan bg-navy/70 rounded px-2.5 py-1.5">
+            <div className="absolute bottom-4 left-4 mono text-xs text-cyan bg-black/60 rounded px-2.5 py-1.5">
               {product.pixelPitch}
             </div>
           )}

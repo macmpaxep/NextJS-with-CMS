@@ -6,7 +6,7 @@ export default function ProductImage({ slug, name, pixelPitch }: { slug: string;
   const [imgError, setImgError] = useState(false);
 
   return (
-    <div className="relative aspect-[4/3] rounded-2xl bg-navy overflow-hidden scanline">
+    <div className="relative aspect-[4/3] rounded-2xl bg-slate overflow-hidden scanline">
       {!imgError ? (
         // eslint-disable-next-line @next/next/no-img-element
         <img
@@ -17,10 +17,10 @@ export default function ProductImage({ slug, name, pixelPitch }: { slug: string;
         />
       ) : (
         <div className="pixel-grid w-full h-full">
-          <div className="absolute inset-0 bg-gradient-to-br from-navy/10 via-transparent to-navy/70" />
+          <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-black/60" />
         </div>
       )}
-      <div className="absolute bottom-4 left-4 mono text-xs text-cyan bg-navy/70 rounded px-2.5 py-1.5">
+      <div className="absolute bottom-4 left-4 mono text-xs text-cyan bg-black/60 rounded px-2.5 py-1.5">
         {pixelPitch}
       </div>
     </div>
