@@ -14,7 +14,7 @@ export default function InstallmentTradeIn() {
           <p className="mono text-[11px] tracking-[0.2em] uppercase text-cyan-dim mb-2">
             Гибкая оплата
           </p>
-          <h3 className="display font-bold text-2xl mb-2">Рассрочка</h3>
+          <h3 className="text-navy display font-bold text-2xl mb-2">Рассрочка</h3>
           <p className="text-slate text-sm max-w-sm">
             Разбейте стоимость экрана на удобные платежи без переплат банка — расчёт
             индивидуально под ваш проект.
