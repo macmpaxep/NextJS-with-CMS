@@ -16,9 +16,9 @@ import Footer from "@/components/Footer";
 import RequestModalProvider from "@/components/RequestModalProvider";
 
 export const metadata: Metadata = {
-  title: "DOSLED — Светодиодные экраны | Казахстан",
+  title: "DOSLED – Проектирование и интеграция премиальных LED-экранов в Казахстане",
   description:
-    "Наружные, внутренние, арендные, COB, напольные, спортивные и прозрачные LED-экраны в Казахстане, в Астане. Продажа, монтаж, рассрочка и trade-in в Казахстане, в Астане.",
+    "Разработка и установка эксклюзивных светодиодных систем для бизнеса, архитектурных объектов и флагманских интерьеров. Интерьерные, гибкие и прозрачные LED-решения под ключ.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
